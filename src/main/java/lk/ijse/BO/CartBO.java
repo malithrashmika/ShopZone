@@ -5,12 +5,7 @@ import lk.ijse.DTO.CartDTO;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/22/25
- * Time: 7:37 PM
- * Description:
- */
+
 public interface CartBO extends SuperBO{
     boolean save(CartDTO entity) throws Exception;
 
