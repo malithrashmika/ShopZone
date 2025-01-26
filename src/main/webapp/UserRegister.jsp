@@ -10,78 +10,58 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: url('webImage/Screenshot from 2025-01-25 01-45-26.png') no-repeat center center/cover;
-            overflow: hidden;
-            animation: page-transition 1s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        @keyframes page-transition {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         .container {
-            width: 80%;
+            width: 90%;
             max-width: 1000px;
-            height: 70%;
             display: flex;
-            border-radius: 30px;
+            flex-wrap: wrap;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            color: #fff;
+            color: white;
         }
 
         .image-container {
-            width: 50%;
-            position: relative;
+            flex: 1;
+            display: flex;
             overflow: hidden;
-            left: -18px;
         }
 
         .image-container img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
-            position: absolute;
             opacity: 0;
-            animation: fade 12s infinite;
+            position: absolute;
+            animation: slideshow 15s infinite;
         }
 
-        .image-container img:nth-child(1) {
-            animation-delay: 0s;
-        }
+        .image-container img:nth-child(1) { animation-delay: 0s; }
+        .image-container img:nth-child(2) { animation-delay: 5s; }
+        .image-container img:nth-child(3) { animation-delay: 10s; }
 
-        .image-container img:nth-child(2) {
-            animation-delay: 4s;
-        }
-
-        .image-container img:nth-child(3) {
-            animation-delay: 8s;
-        }
-
-        @keyframes fade {
-            0%, 100% {
-                opacity: 0;
-            }
-            33% {
-                opacity: 1;
-            }
+        @keyframes slideshow {
+            0%, 100% { opacity: 0; }
+            33% { opacity: 1; }
         }
 
         .form-container {
-            width: 50%;
+            flex: 1;
             padding: 40px;
             display: flex;
             flex-direction: column;
@@ -90,71 +70,86 @@
 
         .form-container h3 {
             margin-bottom: 20px;
-            font-weight: bold;
             text-align: center;
-            color: black;
-            font-size: 35px;
-        }
-
-        .form-container .register-btn {
-            color: #fff;
-            background-color: black;
-            border-radius: 20px;
-            padding: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .form-container .register-btn:hover {
-            background-color: gray;
-            transform: scale(1.05);
+            font-size: 28px;
+            font-weight: bold;
         }
 
         .form-container .form-control {
-            border-radius: 15px;
-            transition: box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            padding: 10px;
+            transition: all 0.3s ease;
         }
 
         .form-container .form-control:focus {
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-            border-color: black;
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
         }
 
-        .form-container .alert {
-            margin-bottom: 20px;
+        .form-container .register-btn {
+            background: #007bff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .form-container .register-btn:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .text-center a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #28a745;
+            transition: color 0.3s ease;
+        }
+
+        .text-center a:hover {
+            color: #1e7e34;
         }
 
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
-                height: auto;
+                border-radius: 10px;
             }
 
             .image-container {
-                width: 100%;
                 height: 200px;
             }
 
             .form-container {
-                width: 100%;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
 <div class="container">
+    <!-- Image Container -->
     <div class="image-container">
-        <img src="webImage/philipp-pilz-iQRKBNKyRpo-unsplash.jpg" alt="Image 1">
-        <img src="webImage/philipp-pilz-QZ2EQuPpQJs-unsplash.jpg" alt="Image 2">
-        <img src="webImage/Faroe%20Island%20with%20@andreknot%20-%20Aries%20Gold%20El%20Toro….jpeg" alt="Image 2">
-        <img src="webImage/Foggy%20Hiking%20Adventure.jpeg" alt="Image 2">
-        <img src="webImage/IMG_3562.JPG" alt="Image 2">
+        <img src="webImage/philipp-pilz-iQRKBNKyRpo-unsplash.jpg" alt="Slide 1">
+        <img src="webImage/philipp-pilz-QZ2EQuPpQJs-unsplash.jpg" alt="Slide 2">
+        <img src="webImage/Faroe%20Island%20with%20@andreknot%20-%20Aries%20Gold%20El%20Toro….jpeg" alt="Slide 3">
     </div>
 
+    <!-- Form Container -->
     <div class="form-container">
         <h3>User Registration</h3>
 
-        <% String message = request.getAttribute("message") != null ? (String) request.getAttribute("message") : null; %>
-        <% String error = request.getAttribute("error") != null ? (String) request.getAttribute("error") : null; %>
+        <%
+            String message = request.getAttribute("message") != null ? (String) request.getAttribute("message") : null;
+            String error = request.getAttribute("error") != null ? (String) request.getAttribute("error") : null;
+        %>
 
         <% if (message != null) { %>
         <div class="alert alert-success"><%= message %></div>
@@ -187,7 +182,7 @@
             </div>
 
             <div class="text-center mt-3">
-                <a style="border-color: black" href="index.jsp" class="btn btn-success d-block register-btn">Already have an account? Login</a>
+                <a href="index.jsp">Already have an account? Login</a>
             </div>
         </form>
     </div>

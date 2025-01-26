@@ -26,8 +26,8 @@
         }
 
         .navbar {
-            background: linear-gradient(to right, #000000, #434343); /* Black to dark gray gradient */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            background: linear-gradient(to right, #000000, #434343);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar .navbar-brand {
@@ -108,7 +108,7 @@
                 <li class="nav-item"><a class="nav-link" href="ProductAdd.jsp"><i class="bi bi-plus-square-fill"></i> Add Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="ProductUpdate.jsp"><i class="bi bi-pencil-fill"></i> Update Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="ProductDelete.jsp"><i class="bi bi-trash-fill"></i> Delete Product</a></li>
-                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Product-List"><i class="bi bi-list"></i>Product List</a></li>
+                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Product-List"><i class="bi bi-list"></i> Product List</a></li>
             </ul>
         </div>
     </div>
@@ -154,13 +154,15 @@
         </form>
     </section>
 </div>
+
+<!-- SweetAlert Alert Script -->
 <script>
     <% if (alertType != null && alertMessage != null) { %>
-
     Swal.fire({
         icon: '<%= alertType %>',
-        title: '<%= alertMessage %>',
-        confirmButtonText: 'OK'
+        title: '<%= alertType.substring(0, 1).toUpperCase() + alertType.substring(1) %>',
+        text: '<%= alertMessage %>',
+        confirmButtonText: 'OK',
     });
     <% } %>
 </script>

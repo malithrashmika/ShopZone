@@ -18,7 +18,7 @@
   <style>
     body {
       background: linear-gradient(to bottom, #f0f4ff, #e0e7ff);
-      font-family: 'Arial', sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     nav {
@@ -27,19 +27,19 @@
     }
 
     .navbar {
-      background: linear-gradient(to right, #000000, #434343); /* Black to dark gray gradient */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      background: linear-gradient(to right, #212529, #495057);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .navbar .navbar-brand {
       font-size: 1.8rem;
       font-weight: bold;
-      color: #fff;
+      color: #ffffff;
       text-transform: uppercase;
     }
 
     .navbar-nav .nav-item .nav-link {
-      color: #fff;
+      color: #ffffff;
       font-size: 1.1rem;
       font-weight: 500;
       padding: 12px 18px;
@@ -53,7 +53,7 @@
 
     .navbar-nav .nav-item .nav-link.active {
       background-color: rgba(0, 0, 0, 0.2);
-      color: #fff;
+      color: #ffffff;
     }
 
     .table-container {
@@ -105,7 +105,7 @@
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="home.jsp">Product Management</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,7 +117,7 @@
         <li class="nav-item"><a class="nav-link" href="ProductAdd.jsp"><i class="bi bi-plus-square-fill"></i> Add Product</a></li>
         <li class="nav-item"><a class="nav-link" href="ProductUpdate.jsp"><i class="bi bi-pencil-fill"></i> Update Product</a></li>
         <li class="nav-item"><a class="nav-link" href="ProductDelete.jsp"><i class="bi bi-trash-fill"></i> Delete Product</a></li>
-        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Product-List"><i class="bi bi-list"></i>Product List</a></li>
+        <li class="nav-item"><a class="nav-link active" href="${pageContext.request.contextPath}/Product-List"><i class="bi bi-list"></i> Product List</a></li>
       </ul>
     </div>
   </div>
@@ -169,6 +169,10 @@
     <% } %>
   </div>
 </div>
+
+<footer>
+  <p>&copy; 2025 Product Management | <a href="#">Privacy Policy</a></p>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

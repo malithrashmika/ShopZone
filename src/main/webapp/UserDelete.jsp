@@ -9,47 +9,43 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
   <style>
     body {
-      background-color: #121212; /* Dark background for the whole page */
-      color: #eaeaea; /* Light text for contrast */
+      background-color: #121212;
+      color: #eaeaea;
     }
-    .forgot-password-container {
+    .delete-account-container {
       max-width: 400px;
       margin: 50px auto;
-      background: #1f1f1f; /* Dark background for the form container */
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Darker shadow */
+      background: #1f1f1f;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
     }
-    .submit-btn {
-      background-color: #343a40; /* Dark background for the button */
-      color: #fff; /* White text */
+    .btn-custom {
+      background-color: #dc3545;
+      color: #fff;
+      font-weight: bold;
       border: none;
       border-radius: 4px;
-      font-weight: bold;
       padding: 10px;
     }
-    .submit-btn:hover {
-      background-color: #495057; /* Slightly lighter shade of dark on hover */
-      cursor: pointer;
+    .btn-custom:hover {
+      background-color: #c82333;
     }
-    .submit-btn:focus {
-      outline: none; /* Remove outline on focus */
-      box-shadow: 0 0 5px rgba(52, 58, 64, 0.5); /* Darker focus border */
+    .btn-custom:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(220, 53, 69, 0.8);
     }
     .form-control {
-      background-color: #2d2d2d; /* Dark input background */
-      color: #fff; /* White text */
-      border: 1px solid #555; /* Subtle border */
+      background-color: #2d2d2d;
+      color: #fff;
+      border: 1px solid #555;
     }
     .form-control:focus {
       box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
       border-color: #007bff;
     }
-    .alert {
-      border-radius: 4px;
-    }
     .text-center a {
-      color: #007bff; /* Blue color for links */
+      color: #007bff;
     }
     .text-center a:hover {
       text-decoration: underline;
@@ -59,30 +55,36 @@
 <body>
 
 <div class="container">
-  <div class="forgot-password-container">
+  <div class="delete-account-container">
     <h3 class="text-center mb-4">Delete Account</h3>
     <%
       String message = (String) request.getAttribute("message");
       String error = (String) request.getAttribute("error");
     %>
     <% if (message != null) { %>
-    <div class="alert alert-success"><%= message %></div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <% } %>
     <% if (error != null) { %>
-    <div class="alert alert-danger"><%= error %></div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= error %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <% } %>
 
     <form action="DeleteAccountServlet" method="post">
       <div class="mb-3">
-        <label for="email" class="form-label">Enter Your Email</label>
+        <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" name="email" id="email" placeholder="Enter your registered email" required>
       </div>
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" name="password" id="password" placeholder="Enter new password" required>
+        <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password" required>
       </div>
       <div class="d-grid">
-        <button type="submit" class="btn submit-btn">Delete Account</button>
+        <button type="submit" class="btn btn-custom" onclick="return confirm('Are you sure you want to delete this account?')">Delete Account</button>
       </div>
       <div class="text-center mt-3">
         <a href="UserUpdate.jsp" class="text-decoration-none">Forgot Password?</a>
@@ -96,14 +98,16 @@
   <% if (message != null) { %>
   Swal.fire({
     icon: 'success',
-    title: 'Success',
+    title: 'Account Deleted',
     text: '<%= message %>',
+    confirmButtonColor: '#198754'
   });
   <% } else if (error != null) { %>
   Swal.fire({
     icon: 'error',
     title: 'Error',
     text: '<%= error %>',
+    confirmButtonColor: '#dc3545'
   });
   <% } %>
 </script>

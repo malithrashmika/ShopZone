@@ -1,8 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: vishmee
-  Date: 1/21/25
---%>
+<%-- Created by IntelliJ IDEA. User: vishmee Date: 1/21/25 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     String alertType = (String) request.getAttribute("alertType");
@@ -24,70 +20,77 @@
 
     <!-- SweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #eef6fc, #f8fbff);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        nav {
+            background: linear-gradient(to right, #000000, #434343);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 12px 18px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        form {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+    </style>
 </head>
-<style>
-    body {
-        background: linear-gradient(to bottom, #e9f8ff, #f3faff);
-        font-family: 'Arial', sans-serif;
-        color: #333;
-    }
-
-    nav {
-        background: #ffffff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .container {
-        margin-top: 100px;
-    }
-
-    h2 {
-        font-weight: bold;
-        color: #0d6efd;
-    }
-
-    form {
-        background: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar {
-        background: linear-gradient(to right, #000000, #434343); /* Black to dark gray gradient */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-
-    .navbar .navbar-brand {
-        font-size: 1.8rem;
-        font-weight: bold;
-        color: #fff;
-        text-transform: uppercase;
-    }
-
-    .navbar-nav .nav-item .nav-link {
-        color: #fff;
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 12px 18px;
-        transition: background-color 0.3s ease;
-    }
-
-    .navbar-nav .nav-item .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 5px;
-    }
-
-    .navbar-nav .nav-item .nav-link.active {
-        background-color: rgba(0, 0, 0, 0.2);
-        color: #fff;
-    }
-</style>
 <body>
 
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="home.jsp">Product Management</a>
+        <a class="navbar-brand" href="home.jsp">Product Management</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -95,7 +98,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/homeProduct"><i class="bi bi-house-fill"></i> Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="ProductAdd.jsp"><i class="bi bi-plus-square-fill"></i> Add Product</a></li>
-                <li class="nav-item"><a class="nav-link" href="ProductUpdate.jsp"><i class="bi bi-pencil-fill"></i> Update Product</a></li>
+                <li class="nav-item"><a class="nav-link active" href="ProductUpdate.jsp"><i class="bi bi-pencil-fill"></i> Update Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="ProductDelete.jsp"><i class="bi bi-trash-fill"></i> Delete Product</a></li>
                 <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/Product-List"><i class="bi bi-list"></i> Product List</a></li>
             </ul>
@@ -108,6 +111,7 @@
     <%-- Alert Messages --%>
     <% if (alertType != null && alertMessage != null) { %>
     <div class="alert alert-<%= alertType %> alert-dismissible fade show" role="alert">
+        <i class="bi <%= alertType.equals("success") ? "bi-check-circle-fill" : "bi-exclamation-circle-fill" %>"></i>
         <%= alertMessage %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -116,7 +120,7 @@
     <!-- Product Update Form -->
     <section id="productForm" class="mb-5">
         <h2 class="text-center mb-4">Update Product</h2>
-        <form action="ProductUpdateServlet" method="post" class="card p-4 shadow-sm" <%--enctype="multipart/form-data"--%>>
+        <form action="ProductUpdateServlet" method="post" class="card p-4 shadow-sm">
             <!-- Product ID -->
             <div class="mb-3">
                 <label for="ProductID" class="form-label">Product ID</label>
@@ -150,25 +154,27 @@
             <!-- Image -->
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
+                <input type="file" name="image" id="image" class="form-control" accept="image/*">
             </div>
             <!-- Buttons -->
             <div class="d-flex justify-content-between">
                 <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure you want to update this product?')">
-                    Update Product
+                    <i class="bi bi-pencil-square"></i> Update Product
                 </button>
-                <button type="reset" class="btn btn-secondary">Clear</button>
+                <button type="reset" class="btn btn-secondary"><i class="bi bi-arrow-clockwise"></i> Clear</button>
             </div>
         </form>
     </section>
 </div>
 
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Product Management. All rights reserved. <a href="#">Privacy Policy</a></p>
+</footer>
+
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 <script>
-
     <% if (alertType != null && alertMessage != null) { %>
     Swal.fire({
         icon: '<%= alertType %>',

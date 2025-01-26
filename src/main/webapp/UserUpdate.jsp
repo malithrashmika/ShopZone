@@ -5,65 +5,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forgot Password</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
     <style>
         body {
-            background-color: #121212; /* Dark background for the entire page */
-            color: #eaeaea; /* Light text for contrast */
+            background-color: #121212;
+            color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
         }
+
         .forgot-password-container {
             max-width: 400px;
-            margin: 50px auto;
-            background: #1f1f1f; /* Dark background for the form container */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Darker shadow for a sleek look */
+            width: 100%;
+            background: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
         }
+
+        .forgot-password-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
         .submit-btn {
-            background-color: #007bff; /* Blue background */
-            color: #fff; /* White text */
+            background-color: #007bff;
+            color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-weight: bold;
             padding: 10px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         .submit-btn:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
+            transform: scale(1.03);
             cursor: pointer;
         }
+
         .submit-btn:focus {
-            outline: none; /* Remove outline on focus */
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add blue focus shadow */
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+            outline: none;
         }
+
         .form-control {
-            background-color: #2d2d2d; /* Dark background for inputs */
-            color: #fff; /* White text in inputs */
-            border: 1px solid #555; /* Subtle border */
+            background-color: #2d2d2d;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 10px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
+
         .form-control:focus {
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus effect with blue shadow */
-            border-color: #007bff; /* Blue border on focus */
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
         }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
         .alert {
-            border-radius: 4px; /* Rounded corners for alert */
+            border-radius: 5px;
+            font-size: 14px;
+            margin-bottom: 20px;
         }
+
         .text-center a {
-            color: #007bff; /* Blue color for links */
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
         }
+
         .text-center a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .forgot-password-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="forgot-password-container">
-        <h3 class="text-center mb-4">Forgot Password</h3>
+        <h3>Forgot Password</h3>
+
         <%
             String message = (String) request.getAttribute("message");
             String error = (String) request.getAttribute("error");
         %>
+
         <% if (message != null) { %>
         <div class="alert alert-success"><%= message %></div>
         <% } %>

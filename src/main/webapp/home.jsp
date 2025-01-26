@@ -175,7 +175,7 @@
             <div class="col-md-4 col-lg-3 mb-4">
                 <div class="card product-card shadow-sm position-relative">
                     <div class="card-img-wrapper overflow-hidden">
-                        <img src="asesst/<%= productDTO.getImagePath() %>" class="card-img-top product-image" alt="<%= productDTO.getName() %>">
+                        <img src="resources/Assets/<%= productDTO.getImagePath() %>" class="card-img-top product-image" alt="<%= productDTO.getName() %>">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title fw-bold"><%= productDTO.getName() %></h5>

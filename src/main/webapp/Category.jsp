@@ -264,10 +264,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body {
-            background: linear-gradient(to right, #000000, #434343);
-            color: #f8f9fa;
-        }
 
         .navbar {
             background: linear-gradient(to right, #4b6cb7, #182848); /* Blue gradient */
