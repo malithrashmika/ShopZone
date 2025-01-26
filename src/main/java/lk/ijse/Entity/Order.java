@@ -1,18 +1,14 @@
 package lk.ijse.Entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 1:44 AM
- * Description:
- */
+
 @Entity
 @Table(name = "orders")
 @AllArgsConstructor

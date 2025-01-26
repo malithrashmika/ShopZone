@@ -6,12 +6,7 @@ import lk.ijse.Entity.User;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 2:56 PM
- * Description:
- */
+
 public interface UserBO extends SuperBO{
 
     boolean save(UserDTO dto) throws Exception;

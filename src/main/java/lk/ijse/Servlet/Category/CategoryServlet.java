@@ -1,6 +1,5 @@
 package lk.ijse.Servlet.Category;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -8,20 +7,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.CategoryBO;
-import lk.ijse.DAO.CategoryDAO;
 import lk.ijse.DTO.CategoryDTO;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 11:39 PM
- * Description:
- */
+
 @WebServlet (name = "Category" , value ="/CategoryServlet")
 public class CategoryServlet extends HttpServlet {
     CategoryBO categoryBO = (CategoryBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Category);

@@ -14,12 +14,7 @@ import lk.ijse.Entity.Category;
 
 import java.io.IOException;
 
-/**
- * Author: vishmee
- * Date: 1/21/25
- * Time: 8:35 PM
- * Description:
- */
+
 @WebServlet(name = "Product_UpdateServlet" , value = "/ProductUpdateServlet")
 public class Product_Update extends HttpServlet {
     CategoryBO categoryBO = (CategoryBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Category);

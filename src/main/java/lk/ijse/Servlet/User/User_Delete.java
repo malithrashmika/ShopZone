@@ -7,18 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.UserBO;
-import lk.ijse.DTO.UserDTO;
 import lk.ijse.Entity.User;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 10:01 PM
- * Description:
- */
+
 @WebServlet(name = "UserDelete" ,value = "/DeleteAccountServlet")
 public class User_Delete extends HttpServlet {
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.User);

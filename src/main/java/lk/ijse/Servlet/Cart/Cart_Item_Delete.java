@@ -10,12 +10,6 @@ import lk.ijse.BO.CartBO;
 
 import java.io.IOException;
 
-/**
- * Author: vishmee
- * Date: 1/24/25
- * Time: 2:06 AM
- * Description:
- */
 
 @WebServlet(name = "Cart_ItemDelete", value = "/RemoveFromCartServlet")
 public class Cart_Item_Delete extends HttpServlet {

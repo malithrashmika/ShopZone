@@ -9,12 +9,7 @@ import lk.ijse.Entity.User;
 
 import java.util.ArrayList;
 
-/**
- * Author: vishmee
- * Date: 1/24/25
- * Time: 3:27 PM
- * Description: 
- */
+
 public class OrderBOImpl implements OrderBO {
     OrderDAO orderDAO = (OrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.Order);
     @Override

@@ -5,25 +5,17 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.LoginBO;
 import lk.ijse.BO.UserBO;
-import lk.ijse.BO.custom.LoginBOImpl;
 import lk.ijse.DTO.LoginDTO;
-import lk.ijse.Entity.Login;
 import lk.ijse.Entity.User;
 import lk.ijse.Servlet.Product.CustomerHomeProduct;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
 import java.sql.SQLException;
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 1:44 AM
- * Description:
- */
+
 @WebServlet(name = "UserLoginServlet", value = {"/loginServlet"})
 public class User_Get extends HttpServlet {
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.User);

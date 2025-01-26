@@ -6,12 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 1:45 AM
- * Description:
- */
+
 @Entity
 @Table(name = "order_details")
 @AllArgsConstructor

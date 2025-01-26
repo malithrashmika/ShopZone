@@ -6,12 +6,6 @@ import lk.ijse.Entity.Category;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 11:44 PM
- * Description:
- */
 public interface CategoryBO extends SuperBO{
     boolean save(CategoryDTO dto) throws Exception;
 

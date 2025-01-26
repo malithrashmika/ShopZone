@@ -1,15 +1,16 @@
 package lk.ijse.Servlet.Cart;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.CartBO;
-import lk.ijse.DAO.*;
+import lk.ijse.DAO.DAOFactory;
+import lk.ijse.DAO.LoginDAO;
+import lk.ijse.DAO.ProductDAO;
+import lk.ijse.DAO.UserDAO;
 import lk.ijse.DTO.CartDTO;
 import lk.ijse.DTO.CategoryDTO;
 import lk.ijse.DTO.ProductDTO;
@@ -20,8 +21,6 @@ import lk.ijse.Entity.User;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "Product_AddToCart", value = "/AddToCartServlet")
 public class CartServlet extends HttpServlet {

@@ -8,12 +8,7 @@ import org.hibernate.Transaction;
 import java.sql.SQLException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 2:56 PM
- * Description:
- */
+
 public class UserDAOImpl implements UserDAO {
     @Override
     public boolean save(User entity) throws Exception {

@@ -16,12 +16,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/22/25
- * Time: 7:36 PM
- * Description:
- */
+
 public class CartBOImpl implements CartBO {
     CartDAO cartDAO = (CartDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.Cart);
     @Override

@@ -13,12 +13,7 @@ import lk.ijse.DTO.ProductDTO;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/22/25
- * Time: 4:12 PM
- * Description:
- */
+
 @WebServlet(name = "Customer_home_Product", value = "/CustomerHomeProduct")
 public class CustomerHomeProduct extends HttpServlet {
     ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Product);

@@ -1,14 +1,8 @@
 package lk.ijse.Entity;
 
 import jakarta.persistence.*;
-import lombok.*;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 1:44 AM
- * Description:
- */
+
 @Entity
 @Table(name = "cart")
 public class Cart {

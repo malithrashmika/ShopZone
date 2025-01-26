@@ -10,12 +10,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 2:57 PM
- * Description:
- */
 public class UserBOImpl implements UserBO {
     UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.User);
     @Override

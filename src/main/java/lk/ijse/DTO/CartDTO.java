@@ -1,14 +1,11 @@
 package lk.ijse.DTO;
 
-import jakarta.persistence.*;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 1:44 AM
- * Description:
- */
-import lombok.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor

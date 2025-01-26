@@ -1,10 +1,5 @@
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 2:48 AM
- * Description:
- */
+
 package lk.ijse.Servlet.User;
 
 import jakarta.servlet.ServletException;
@@ -14,17 +9,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.UserBO;
-import lk.ijse.BO.custom.UserBOImpl;
 import lk.ijse.DTO.UserDTO;
 import lk.ijse.Entity.User;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.sql.SQLException;
-import java.util.ArrayList;
 
 @WebServlet(name = "UserSaveServlet", value = "/registerServlet")
 public class User_Post extends HttpServlet {

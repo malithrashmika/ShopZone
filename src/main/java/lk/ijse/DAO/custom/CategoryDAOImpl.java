@@ -9,12 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 3:03 PM
- * Description:
- */
+
 public class CategoryDAOImpl implements CategoryDAO {
     @Override
     public boolean save(Category entity) throws Exception {

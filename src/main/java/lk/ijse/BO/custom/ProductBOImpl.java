@@ -13,12 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/19/25
- * Time: 12:20 PM
- * Description:
- */
+
 public class ProductBOImpl implements ProductBO {
     ProductDAO productDA0 = (ProductDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.Product);
     @Override

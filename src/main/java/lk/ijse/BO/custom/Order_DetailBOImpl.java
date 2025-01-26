@@ -6,16 +6,10 @@ import lk.ijse.DAO.OrderDetailDAO;
 import lk.ijse.DTO.OrderDetailDTO;
 import lk.ijse.Entity.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/24/25
- * Time: 3:28 PM
- * Description: 
- */
+
 public class Order_DetailBOImpl implements Order_DetailBO {
     OrderDetailDAO orderDetailDAO = (OrderDetailDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.Order_Detail);
     @Override

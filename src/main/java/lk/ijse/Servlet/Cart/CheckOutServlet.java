@@ -14,11 +14,9 @@ import lk.ijse.DAO.LoginDAO;
 import lk.ijse.DAO.OrderDAO;
 import lk.ijse.DAO.UserDAO;
 import lk.ijse.DTO.*;
-import lk.ijse.Entity.Cart;
 import lk.ijse.Entity.Login;
 import lk.ijse.Entity.Order;
 import lk.ijse.Entity.User;
-import lk.ijse.config.FactoryConfiguration;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -26,12 +24,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/24/25
- * Time: 7:38 PM
- * Description: 
- */
+
 @WebServlet(name = "PlaceOrder" ,value = "/CheckoutServletButton")
 public class CheckOutServlet extends HttpServlet {
     OrderDAO orderDAO = (OrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.Order);

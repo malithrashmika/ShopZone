@@ -9,17 +9,11 @@ import jakarta.servlet.http.HttpServletResponse;
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.ProductBO;
 import lk.ijse.DTO.ProductDTO;
-import lk.ijse.Servlet.Category.CategoryServlet;
 
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/21/25
- * Time: 8:51 PM
- * Description:
- */
+
 @WebServlet(name = "ProductListServlet", value = "/Product-List")
 public class Product_List extends HttpServlet {
     ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Product);

@@ -11,24 +11,15 @@ import lk.ijse.BO.CheckOutBO;
 import lk.ijse.DAO.DAOFactory;
 import lk.ijse.DAO.LoginDAO;
 import lk.ijse.DAO.UserDAO;
-import lk.ijse.DTO.*;
-import lk.ijse.Entity.Cart;
+import lk.ijse.DTO.CartDTO;
 import lk.ijse.Entity.Login;
-import lk.ijse.Entity.Order;
 import lk.ijse.Entity.User;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/23/25
- * Time: 11:13 PM
- * Description: Servlet to display cart items for the logged-in user.
- */
+
 @WebServlet(name = "CartListByPerson", value = "/CheckoutServlet")
 public class Cart_List extends HttpServlet {
     CartBO cartBO = (CartBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Cart);

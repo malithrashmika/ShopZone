@@ -10,12 +10,6 @@ import lk.ijse.BO.ProductBO;
 
 import java.io.IOException;
 
-/**
- * Author: vishmee
- * Date: 1/21/25
- * Time: 8:34 PM
- * Description:
- */
 @WebServlet(name = "ProductDelete" , value = "/ProductDeleteServlet")
 public class Product_Delete extends HttpServlet {
     ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Product);

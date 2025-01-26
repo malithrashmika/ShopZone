@@ -2,9 +2,6 @@ package lk.ijse.Servlet;
 
 import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.CartBO;
-import org.hibernate.Session;
-import lk.ijse.config.FactoryConfiguration;
-import org.hibernate.Transaction;
 
 /**
  * Author: vishmee

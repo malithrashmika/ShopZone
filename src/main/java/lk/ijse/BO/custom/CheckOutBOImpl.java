@@ -3,12 +3,7 @@ package lk.ijse.BO.custom;
 import lk.ijse.BO.*;
 import lk.ijse.DTO.CheckOutDTO;
 
-/**
- * Author: vishmee
- * Date: 1/24/25
- * Time: 3:25 PM
- * Description:
- */
+
 public class CheckOutBOImpl implements CheckOutBO {
     ProductBO productBO = (ProductBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Product);
     OrderBO orderBO = (OrderBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Order);

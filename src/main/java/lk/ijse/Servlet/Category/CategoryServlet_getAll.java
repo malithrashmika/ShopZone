@@ -13,12 +13,7 @@ import lk.ijse.DTO.CategoryDTO;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/19/25
- * Time: 10:50 PM
- * Description:
- */
+
 @WebServlet(name = "CategoryListServlet" , value = "/category-List")
 public class CategoryServlet_getAll extends HttpServlet {
     CategoryBO categoryBO = (CategoryBO) BOFactory.getBoFactory().getBo(BOFactory.BoType.Category);

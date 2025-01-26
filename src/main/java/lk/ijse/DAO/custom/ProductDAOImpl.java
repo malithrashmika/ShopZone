@@ -10,12 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/19/25
- * Time: 12:19 PM
- * Description:
- */
+
 public class ProductDAOImpl implements ProductDAO {
     @Override
     public boolean save(Product entity) throws Exception {

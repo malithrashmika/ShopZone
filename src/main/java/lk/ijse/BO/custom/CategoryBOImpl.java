@@ -10,12 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 11:44 PM
- * Description:
- */
+
 public class CategoryBOImpl implements CategoryBO {
     CategoryDAO categoryDAO = (CategoryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DaoType.Category);
 

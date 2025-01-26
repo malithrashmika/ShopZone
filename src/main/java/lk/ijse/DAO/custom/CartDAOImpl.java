@@ -10,12 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author: vishmee
- * Date: 1/16/25
- * Time: 3:03 PM
- * Description:
- */
+
 public class CartDAOImpl implements CartDAO {
     @Override
     public boolean save(Cart entity) throws Exception {
